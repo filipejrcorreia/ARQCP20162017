@@ -13,12 +13,16 @@ int main(void){
 	printf("%f\n", y);
 	printf("%p\n", &x);
 	printf("%p\n", v);
-	printf("%d\n", *(v));
-	printf("%d\n", *(v+1));
-	printf("%d\n", *(v+2));
-	printf("%p\n", v);
-	printf("%p\n", v+1);
-	printf("%p\n", v+2);
+	printf("%d\n", *(v++));
+	printf("%d\n", *(v++));
+	printf("%d\n", *(v++));
+	printf("%d\n", *(v++));
+	v = vec;
+
+	printf("%p\n", v++);
+	printf("%p\n", v++);
+	printf("%p\n", v++);
+	printf("%p\n", v++);
 
 return 0;
 }
