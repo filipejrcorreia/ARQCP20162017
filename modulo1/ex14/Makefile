@@ -1,9 +1,9 @@
 # variaveis
 
-INCLUDES = capitalize.h
-SOURCES = capitalize.c main.c
-OBJFILES = capitalize.o main.o
-EXEC = capitalize
+INCLUDES = frequencies.h
+SOURCES = frequencies.c main.c
+OBJFILES = frequencies.o main.o
+EXEC = frequencies
 
 # regras de sufixo
 
