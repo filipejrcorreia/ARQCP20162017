@@ -7,7 +7,7 @@ void compress_shorts(short * shorts, int n_shorts, int * integers){
 	
 	for(i = 0; i < n_shorts; i = i + 2){
 		
-		*( integers + (i/2) ) = *( shorts + i + 1) * pow(2, 8) + *( shorts + i);
+		*( integers + (i/2) ) = *( shorts + i + 1) * pow(2, 16) + *( shorts + i);
 
 	}
 }
