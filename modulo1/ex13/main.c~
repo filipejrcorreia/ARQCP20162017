@@ -1,0 +1,17 @@
+#include <stdio.h>
+
+int main(){
+  char str[10]="joao amadeu";
+  int array[10];
+  char carater='a';
+  char *strA=str;
+  int *arrayA=array;
+  contarCarater(strA,carater,arrayA);
+  int i=0;
+  for (i = 0; i < 20; i++)
+  {
+	  printf("%d\n",arrayA[i]);
+  }
+  
+}
+	

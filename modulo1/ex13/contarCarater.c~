@@ -1,0 +1,14 @@
+#include <stdio.h>
+
+void contarCarater(char *str,char car,int *array){
+	int i=0;
+	int arrayLength=0;
+	while((*(str+i))!=0){
+		if ((*(str+i))==car)
+		{
+			*(array+arrayLenght)=i;
+			arrayLength++;
+		}
+		i++;
+	}
+}
