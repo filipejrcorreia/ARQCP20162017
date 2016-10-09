@@ -7,7 +7,7 @@ int main(void){
 	
 	n = 10;
 
-	short shorts[] = {1 , 2, 3, 4, 5, 6, 7, 8, 9, 10};
+	short shorts[] = {-1,2, 3, 4, 5, 6, 7, 8, 9, 10 };
 
 	int integers[5] = {0}; 
 
