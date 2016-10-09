@@ -2,7 +2,7 @@
 #include "palindrome.h"
 
 int main(){
-	char str[100] = "a man a plan a canal panama";
+	char str[100] = "A man a plan a caNal panama";
 
 	int i = palindrome(str);
 

@@ -10,7 +10,7 @@ int main(){
 	fill_vetor(ptr,n);
 	printf("%s","Numeros");
 	for(i=0;i<n;i++){
-		printf("%d\n",*(ptr+i));
+		printf("\n%d",*(ptr+i));
 	}
 return 0;
 }

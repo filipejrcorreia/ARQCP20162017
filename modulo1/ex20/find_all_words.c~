@@ -1,0 +1,18 @@
+ #include <stdio.h>
+ #include <string.h>
+ 
+char* find_word(char* str, char* word, char* initial_addr);
+ 
+ void find_all_words(char *str, char* word, char **addrs){
+	 char* initial_addr = str;
+	 char *endereco;
+	 endereco = str;
+	 int i=0;
+	 
+	 do{
+		endereco = find_word( str, word,  initial_addr);
+		initial_addr = endereco + strlen(word);
+		addrs[i] = endereco;
+		i++;
+	 } while(endereco != NULL);
+}

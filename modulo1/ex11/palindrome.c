@@ -26,7 +26,7 @@ int palindrome(char * str){
 		if ((*(str+i)!=' ')&&(*(str+j-1)!=' '))
 		{
 		  
-			if ((*(str+i))==(*(str+j-1)))
+			if (((*(str+i))==(*(str+j-1)))||((*(str+i)+32)==(*(str+j-1)))||((*(str+i)-32)==(*(str+j-1))))
 			{
 			  
 				i++;

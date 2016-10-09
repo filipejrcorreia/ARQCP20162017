@@ -1,7 +1,9 @@
 #include <stdio.h>
 
+int contarCarater(char *str,char car,int *array);
+
 int main(){
-  char str[12]="aaaaaaaa";
+  char str[12]="aAAAAaaaa";
   int array[12];
   char carater='a';
   char *strA=str;

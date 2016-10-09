@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+void find_all_words(char *str, char* word, char **addrs);
+
+int main(void){
+
+	char str[100] = "Bar nos vam bar os AO BAr";
+	char word[100] = "bar";
+	char* addrs[100];
+	int i = 0;
+	
+	find_all_words(str, word, addrs);
+	
+	while(addrs[i] != NULL){
+		printf("endereço = %p\n", addrs[i]);
+		i++;
+	}
+	
+	return 0;
+}
