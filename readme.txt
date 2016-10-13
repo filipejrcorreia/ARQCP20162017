@@ -19,3 +19,4 @@ Existe um diretorio para cada modulo das aulas PL. Os exercicios de cada modulo 
 d) Organizacao do diretorio de cada modulo.
 
 Dentro do diretorio de cada modulo deve ser criado um subdiretorio para cada exercicio. O nome desse subdiretorio deve iniciar pelas letras "ex" e ser seguido do numero que identifica o exercicio. Exemplo: "ex01"
+Submission closed for class Modulo01
