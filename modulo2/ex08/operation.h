@@ -1,4 +1,4 @@
-#ifndef ASM_H
-#define ASM_H
+#ifndef OPERATION_H
+#define OPERATION_H
 long long int op(void);
 #endif
