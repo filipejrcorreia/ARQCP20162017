@@ -1,5 +1,5 @@
 #ifndef ASM_H
 #define ASM_H
-int swapBytes(void);
+char isMultiple(void);
 #endif
 
