@@ -1,0 +1,14 @@
+#include <stdio.h>
+#include "asm.h"
+
+short tempi, tempf, res = 0;
+
+int main(void) {
+  printf("Valor da Temperatura Inicial: ");
+  scanf("%hd",&tempi);
+  printf("Valor da Temperatura Final: ");
+  scanf("%hd",&tempf);
+  res = calculo();
+  printf("São precisos %d segundos para o sistema atingir a temperatura pretendida.\n", res);
+  return 0;
+}
