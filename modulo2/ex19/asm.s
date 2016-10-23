@@ -2,28 +2,28 @@
 	.global temp1
 	.global temp2
 
+
 .section .text
-	.global contas 
-contas: #int ac(void)
-	movl $0, %eax
-	movw temp1, %bx   
+	.global operacao # int operacao(void)
+operacao: 
+	movw temp1, %dx   
 	movw temp2, %cx   
-	cmpw %bx, %cx  
-	jg aumenta 
+	movl $0, %eax 
+	cmpw %dx, %cx  
+	jg aumenta     
 	jl diminui
 	ret          
 	
 aumenta:
 	addl $3, %eax 
 	subw $1, %cx  
-	cmpw %bx, %cx 
-	jg sobe     
+	cmpw %dx, %cx 
+	jg aumenta     
 	ret         
 
 diminui:
 	addl $2, %eax 
 	addw $1, %cx  
-	cmpw %bx, %cx 
-	jl desce      
+	cmpw %dx, %cx 
+	jl diminui      
 	ret
-	
