@@ -1,0 +1,13 @@
+#include <stdio.h>
+#include "asm.h"
+
+int valor=0, valor1=0;
+long long int res=0;
+
+int main(void) {
+
+  res=sumInt();
+  printf("%s",res);
+
+return 0;
+}
