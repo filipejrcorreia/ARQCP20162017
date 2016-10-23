@@ -23,27 +23,27 @@ sommation:
 	movl $0, %ebx
 	movl A, %eax
 	movl B, %ecx
-	divl %ecx
+	divl %ecx	# passa A/B para o registo eax
 
 	movl i, %ecx	
 
 	movl %eax, temp	
 
-	loop:
+	loop:		#Loop para realizar o somatório
 
 	movl temp, %eax
 		
-	mull %ecx
+	mull %ecx	#multiplica i por A/B
 
-	addl %eax, %ebx
+	addl %eax, %ebx	#somatório
 	
-	cmpl n, %ecx
+	cmpl n, %ecx	#verifica se i é igual a n
 	jge end_loop
 	
 	addl $1, %ecx
 	jmp loop
 
-	end_loop:
+	end_loop:	#o loop termina quando i for igualado a n
 	
 	movl %ebx, %eax
 

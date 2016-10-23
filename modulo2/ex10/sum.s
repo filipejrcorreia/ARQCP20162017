@@ -1,5 +1,14 @@
 .section .data
-	
+
+op1:
+	.int 0
+op2:
+	.int 0
+of:		#overflow flag status
+	.int 1
+cf:		#carry flag status
+	.int 1
+
 	.global op1
 	.global op2
 	.global of
@@ -18,21 +27,13 @@ sum:
 	movl op2, %eax
 	adcl %ebx, %eax
 	
-	jc output_carry
-	movl $0, cf
-	jmp overflow
+	jc overflow	#jump if carry 
+	movl $0, cf	
 
-	output_carry:
-	movl $1, of
+	overflow:	
 	
-	overflow:
-	
-	jo with_overflow
+	jo fim		#jump if overflow	
 	movl $0, of
-	jmp fim
-
-	with_overflow:
-	movl $1, of
 
 	fim:
 	

@@ -1,8 +1,6 @@
 #include <stdio.h>
 #include "sum.h"
 
-int op1 = 0, op2 = 0, cf = 1, of = 1;
-
 int main(void){
 
 	int res = 0;

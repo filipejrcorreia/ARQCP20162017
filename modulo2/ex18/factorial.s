@@ -1,5 +1,8 @@
 .section .data
 
+n:
+	.int 0
+
 	.global n #numero a ser fatorizado
 
 .section .text

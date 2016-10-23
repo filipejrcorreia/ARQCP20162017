@@ -1,10 +1,6 @@
 #include <stdio.h>
 #include "operation.h"
 
-int C = 0,D = 0;
-char A = 0;
-short B = 0;
-
 int main(void){
 
 	long long int value = 0;

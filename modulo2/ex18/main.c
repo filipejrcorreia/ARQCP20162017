@@ -1,8 +1,6 @@
 # include <stdio.h>
 # include "factorial.h"
 
-int n = 0;
-
 int main(void){
 	
 	long long int res;

@@ -1,9 +1,8 @@
 #include <stdio.h>
 #include "operation.h"
 
-int op1=0, op2=0, res = 0;
 
-int main(void){	
+int main(void){
 	printf("Valor op1:");
 	scanf("%d",&op1);
 	printf("Valor op2:");

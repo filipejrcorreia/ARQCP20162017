@@ -1,8 +1,6 @@
 #include <stdio.h>
 #include "ex14.h"
 
-int num = 0;
-
 int main(void){
 
 	int final;

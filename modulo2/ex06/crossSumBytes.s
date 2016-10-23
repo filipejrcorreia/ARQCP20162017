@@ -1,5 +1,11 @@
 .section .data
 
+by1:
+	.byte 0
+
+by2:
+	.byte 0
+
 	.global by1
 	.global by2
 

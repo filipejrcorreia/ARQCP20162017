@@ -19,7 +19,7 @@
 	pushl %ebp
 	movl %esp, %ebp
 	
-	movl $0, %edx
+	movl $0, %edx	#inicializar os registos necessários a 0
 	movl $0, %eax
 	movl $0, %ecx
 	movl length, %eax

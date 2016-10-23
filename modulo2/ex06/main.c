@@ -2,7 +2,6 @@
 #include "asm.h"
 #include "crossSumBytes.h"
 
-char by1=0, by2=0;
 short valor=0, res=0;
 
 int main(void) {

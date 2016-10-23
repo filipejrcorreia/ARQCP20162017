@@ -1,4 +1,11 @@
 .section .data
+op1:
+	.int 0
+op2:
+	.int 0
+res:
+	.int 0
+
 	.global op1
 	.global op2
 	.global res
@@ -10,16 +17,18 @@
 operation:
 
 	pushl %ebp
-	movl %esp, %ebp
+	movl %esp, %ebp	
+
 	movl op1, %eax
-	movl $CONST, %ebx
-	sub %ebx, %eax
+	movl $CONST, %ecx
+	sub %ecx, %eax
 	movl %eax, op1
 	movl op2, %eax
-	sub %eax, %ebx
+	sub %eax, %ecx
 	movl op1, %eax
-	sub %ebx, %eax
+	sub %ecx, %eax #subtração de eax (op1-const) com ecx (op2-const)
 	movl %eax, res
+
 	movl %ebp, %esp
 	popl %ebp
 	ret
