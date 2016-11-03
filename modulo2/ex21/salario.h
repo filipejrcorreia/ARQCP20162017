@@ -1,0 +1,1 @@
+int salario(void);
