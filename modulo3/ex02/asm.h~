@@ -1,0 +1,10 @@
+# ifndef _STR_CPY_ // avoid duplicate definitions
+# define _STR_CPY_
+// maximum number of chars in a string
+# define MAX_CHAR 20
+
+void str_copy_p();
+
+extern char * ptr1 , * ptr2 ;
+# endif
+
