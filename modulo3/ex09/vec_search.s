@@ -13,8 +13,8 @@
 vec_search:
 
 	pushl %ebp
-	pushl %ebx
 	movl %esp, %ebp
+	pushl %ebx
 
 	movl ptrvec, %edx #ptrvec, apontador para o vetor passa para o registo edx
 
@@ -36,8 +36,8 @@ vec_search:
 
 	end:
 	
-	movl %ebp, %esp
 	popl %ebx
+	movl %ebp, %esp
 	popl %ebp
 	ret
 
