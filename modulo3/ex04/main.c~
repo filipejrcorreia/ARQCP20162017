@@ -1,0 +1,20 @@
+#include <stdio.h>
+#include "asm.h"
+
+int array [] = {10 , 15 , 20 , 25 , 30 , 35 , 40 , 45 , 50 , 55 , 60};
+int *ptrvec;
+
+
+int main(void) {
+  ptrvec=array;
+  printf("Array: {");
+  for (i = 0; i < 11; i++)
+  {
+	  printf("  %d",array[i]);
+  }
+  printf("}");
+  int suum=vec_sum();
+  printf("Soma de todos os elementos: %d",sum);
+ 
+  return 0;
+}
