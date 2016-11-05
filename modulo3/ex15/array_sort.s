@@ -13,55 +13,42 @@ array_sort:
 	pushl %ebp
 	movl %esp, %ebp
 	pushl %ebx
-	pushl %eci
+	pushl %esi
 	
-	movl ptrvec, %ecx
+	movl ptrvec, %esi #Apontador do vetor passa para o registo esi
+	movl num, %ecx #Numero de elementos de vec passa para ecx
+	movl $0, %eax #eax é o contador
+
+	Loop:
+
+	cmpl %ecx, %eax	#Se o contador for igual ao numero de elementos, o programa acaba
+	jge end
+
+	cmpl $0, %eax	#Se o contador for igual a 0, este vai ser incrementado
+	je Increase
+
+	movl (%esi), %ebx #O valor atual de esi é passado para ebx
+	movl -4(%esi), %edx #O valor anterior de esi é passado para edx
+	cmpl %ebx, %edx #Se edx for menor ou igual a ebx, o contador é aumentado
+	jle Increase	
+
+	movl %edx, (%esi) #Como edx é maior que ebx, edx passa para a posição atual do vetor
+	movl %ebx, -4(%esi) #E ebx, mais pequeno, passa para a posição anterior do vetor
+
+	subl $4, %esi #O apontador volta ao index anterior
+	dec %eax #O contador é decrementado
+
+	BackToLoop:
+	jmp Loop
+
+	Increase:
+	inc %eax #O contador é incrementado
+	add $4, %esi #O apontador passa para o próximo index
+	jmp BackToLoop	
 	
-	movl num, %eci
+	end:
 
-	loop:
-
-	movl (%ecx), %ebx
-
-	cmpl %ebx, 4(%ecx) 
-	jl sort
-	
-	midloop:
-	
-	cmpl num, %edx
-	je bubble
-
-	addl $4, %ecx
-	addl $1, %edx
-
-	jmp loop
-
-	bubble:
-	
-	movl %edx, %eax
-	movl $0, %edx
-	mull $4
-
-	subl %eax, %ecx
-
-	cmpl $0, %eci
-	je end	
-
-	cmpl %eci, 
-	
-	subl $1, %eci
-
-	sort:
-
-	movl 4(%ecx), %eax
-	movl (%ecx), 4(%ecx)
-	movl %eax, (%ecx)
-
-	jmp midloop
-
-	end:	
-
-	popl %eci
+	popl %esi
 	popl %ebx
 	movl %ebp, %esp
 	popl %ebp
