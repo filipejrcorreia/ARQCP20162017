@@ -7,7 +7,7 @@ main.o: main.c space_count.h
 space_count.o: space_count.s
 	gcc -Wall -g -c space_count.s
 
-run: space_count
+run: main
 	./space_count
 
 clean: 

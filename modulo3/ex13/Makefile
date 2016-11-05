@@ -7,7 +7,7 @@ main.o: main.c vec_fill.h
 vec_fill.o: vec_fill.s
 	gcc -Wall -g -c vec_fill.s
 
-run: vec_fill
+run: main
 	./vec_fill
 
 clean: 

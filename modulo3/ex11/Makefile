@@ -7,7 +7,7 @@ main.o: main.c vec_greater10.h
 vec_greater10.o: vec_greater10.s
 	gcc -Wall -g -c vec_greater10.s
 
-run: vec_greater10
+run: main
 	./vec_greater10
 
 clean: 

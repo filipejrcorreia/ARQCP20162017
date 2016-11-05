@@ -7,7 +7,7 @@ main.o: main.c array_sort.h
 array_sort.o: array_sort.s
 	gcc -Wall -g -c array_sort.s
 
-run: array_sort
+run: main
 	./array_sort
 
 clean: 

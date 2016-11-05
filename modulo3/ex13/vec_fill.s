@@ -12,9 +12,12 @@ vec_fill:
 
 	pushl %ebp
 	movl %esp, %ebp
+	pushl %ebx
 
 	movl ptrvec, %ecx #Apontador do vetor fica no registo ecx
 	movl $0, %edx
+	movl num, %ebx
+	subl $1, %ebx
 
 	loop:
 
@@ -25,7 +28,7 @@ vec_fill:
 
 	midloop:	
 	
-	cmpl num, %edx	#Compara edx com num, o loop acaba quando edx, o contador atinge num
+	cmpl %ebx, %edx	#Compara edx com num, o loop acaba quando edx, o contador atinge num
 	je end	
 
 	addl $4, %ecx	#Adiciona 4 a ecx, logo passa ao próximo int do vetor
@@ -39,6 +42,7 @@ vec_fill:
 	jmp midloop
 	
 	end:
+	popl %ebx
 	movl %ebp, %esp
 	popl %ebp
 	ret

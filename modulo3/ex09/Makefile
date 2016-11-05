@@ -7,7 +7,8 @@ main.o: main.c vec_search.h
 vec_search.o: vec_search.s
 	gcc -Wall -g -c vec_search.s
 
-run: vec_search
+run: main
+
 	./vec_search
 
 clean: 

@@ -8,7 +8,7 @@ int num;
 int main(void){
 
 	
-	int vec [] = { 3 , 1, 4, 2, 5, 7, 6, 9, 8, 5};
+	int vec [] = { 33 , 14, 134, 662, 75, 57, 6, 39, 58, 665};
 	
 	num = 10;
 
@@ -18,7 +18,7 @@ int main(void){
 
 	array_sort();
 	
-	for(i=0; i<=num; i++){
+	for(i=0; i<num; i++){
 
 	printf("%d ", *(vec + i));
 

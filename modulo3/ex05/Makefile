@@ -7,7 +7,7 @@ main.o: main.c vec_inc.h
 vec_inc.o: vec_inc.s
 	gcc -Wall -g -c vec_inc.s
 
-run: vec_inc
+run: main
 	./vec_inc
 
 clean: 

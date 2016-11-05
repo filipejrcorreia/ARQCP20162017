@@ -11,7 +11,7 @@ int main(void){
 
 	ptrvec = vec;
 
-	num = 9;
+	num = 10;
 
 	vec_fill();
 
@@ -19,11 +19,12 @@ int main(void){
 	
 	printf("Vetor: \n");
 
-	for(i = 0; i<= num; i++){
+	for(i = 0; i< num; i++){
 
 	printf("%d ", *(ptrvec + i));
 
 	}
+	printf("\n");
 
 return 0;
 
