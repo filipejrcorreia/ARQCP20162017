@@ -16,6 +16,8 @@ encrypt:
 
 operaçoes:
 	movb (% esi ) ,% cl #copiar primeiro carater para cl
+	cmpb $0 ,% cl #verifica se é o fim da string
+	jz str_loop_end  #se for termina
 	cmpb $32 ,% cl  #ver se o carater é espaço
 	je continuar   #salta
 	cmpb $48 ,% cl  #ver se o carater é 0
@@ -23,8 +25,8 @@ operaçoes:
 	incl %eax  #incrementa eax
 	incl (%esi) #incrementa o carater
 
-	cmpb $0 ,% cl #verifica se é o fim da string
-	jz str_loop_end  #se for termina
+
+
 continuar:
 	incl % esi  #incrementa, passado para o proxim caraater
 

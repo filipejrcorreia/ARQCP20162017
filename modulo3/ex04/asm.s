@@ -19,7 +19,7 @@ vec_sum :
 loop :
 	addl (% esi), %eax
 
-	incl (% esi) #incrementa, passado para o proxim caraater
+	addl $4, % esi #incrementa, passado para o proxim caraater
 	decl % edx	
 	cmpl $0, %edx
 	je loop_end

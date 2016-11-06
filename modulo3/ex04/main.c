@@ -15,7 +15,7 @@ int main(void) {
   }
   printf("}\n");
   int sum=vec_sum();
-  printf("Soma de todos os elementos: %d",sum);
+  printf("Soma de todos os elementos: %d\n",sum);
  
   return 0;
 }

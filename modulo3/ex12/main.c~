@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "asm.h"
 
-int *ptrvec;
+short int *ptrvec;
 int num;
 
 int main(){
@@ -9,7 +9,7 @@ int main(){
 	printf("Insira o número de elementos do vetor: ");
 	scanf("%d", &num);
 	
-	int vec[num];
+	short int vec[num];
 	int i;
 	ptrvec = vec;
 	
