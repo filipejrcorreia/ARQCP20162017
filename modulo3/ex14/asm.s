@@ -3,9 +3,9 @@
 	.global ptrvec1 # ptrvec1 global 
 	.global ptrvec2 # ptrvec2 global 
 	.global ptrvec3 # ptrvec3 global 
-	
 	.global num   #tamanho vetor
-
+	temp:
+		.short 0
 
 .section .text
 	.global vec_diff # int vec_diff(void)
@@ -17,61 +17,78 @@ vec_diff :
 	pushl %ebp # save previous stack frame pointer
 	movl %esp, %ebp # the stack frame pointer for sum function
 
-	movl ptrvec1 ,% esi # copiar int address para % esi
-	movl ptrvec3, % edx
-	movl num, %ecx	   #mete o tamanho do vetor em ecx
-	movl $0, %ebx      #inicia ebx
-	
-	
+	movl ptrvec1 ,% esi 	# copiar int address para % esi
+	movl ptrvec3, % edi
+	movl $0, %ecx
+	movl $0, %ebx      		
+	movl $0, %eax
+	movl $0, %eax
 
-condicao :
-	push %ebx
+ciclo :
+	cmpl num, %ebx  
+	jge loop_end
+	movl $0, %edx
+	movw (%esi, %ebx, 2), %dx	
+	movw %dx, temp
+	
 	push %edx
-	push %eax
 	call exists
-	cmpl $0,%eax
-	popl %eax
 	popl %edx
-	popl %ebx
+	
+	cmpl $0,%eax
 	je nao_existe
-continuar:
-	addl $2, %esi
-	decl %ecx
-	cmpl $0, %ecx
-	je loop_end
-	jmp condicao
+	incl %ebx 
+	jmp ciclo
 
 nao_existe:
-	movl (%esi),%edx
-	addl $4, %edx
+	movl $0, %edx
+	movw (%esi, %ebx, 2),%dx   
+	movl %edx, (%edi)
+	addl $4, %edi
+	incl %ecx
 	incl %ebx
-	jmp condicao
-	
-exists:
-	movl ptrvec2 ,%edx
-	movl num,%ecx
-	movl $0,%eax
-	movl (%edx), %ebx
-	cmpl (%esi),%ebx
-	je existe
-	cmpl $0, %ecx
-	decl %ecx
-	je loop_end
-	addl $2,%edx
-	jmp exists
-	
-
-existe:
-	movl $1, %eax
-	ret
-
+	jmp ciclo
 
 loop_end : 
-
+	movl %ecx, %eax
 # epilogue
 	movl %ebp , % esp # restore the stack pointer (" clear " the stack )
 	popl % ebp # restore the stack frame pointer
 	ret # return from the function
 	
+exists:
+	# prologue
+		pushl %ebp 				# save previous stack frame pointer
+		movl %esp, %ebp 		# the stack frame pointer for sum function
 	
+	#body
+		pushl %esi
+		pushl %edi
+		pushl %ebx
+		movl $0, %eax
+		movl ptrvec2 ,%esi
+		movl num, %edi
+		movl $0, %ebx
+	star_loop:
+		cmpl %edi, %ebx
+		jge star_loop_end
+		movw temp, %dx
+		cmpw %dx, (%esi)
+		je number_exist
+		incl %ebx
+		addl $2, %esi
+		jmp star_loop
+		
+	number_exist:
+		movl $1, %eax	
+	star_loop_end:
+		popl %ebx
+		popl %edi				
+		popl %esi				
+
+	# epilogue
+		movl %ebp, %esp 		# restore the previous stack pointer ("clear" the stack)
+		popl %ebp 				# restore the previous stack frame pointer
+		ret	
+
 	

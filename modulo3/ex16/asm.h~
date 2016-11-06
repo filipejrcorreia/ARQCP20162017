@@ -1,0 +1,2 @@
+void sort(void)
+ int sort_without_reps(void);

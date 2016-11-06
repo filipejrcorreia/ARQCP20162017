@@ -8,47 +8,37 @@ int num;
 
 int main(){
 	
-	printf("Insira o número de elementos do vetor: ");
-	scanf("%d", &num);
+    num = 10;
 	
-	short int vec1[num];
-	short int vec2[num];
+	short int vec1[10]= {5,34, 2,1,76,100,23,3,2,1};
+	short int vec2[10]= {4,9,1,5,20,76,1,5,6,70};
 	int vec3[num];
 	int i;
 
-	printf("\nVetor 1");
-	for(i=0; i<num; i++){
-		printf("\nValor da %dª posição: ", (i+1));
-		scanf("\n%hi", &vec1[i]);
-	}
-	printf("\nVetor 2");
-	for(i=0; i<num; i++){
-		printf("\nValor da %dª posição: ", (i+1));
-		scanf("%hi", &vec2[i]);
-	}
 	ptrvec1 = vec1;
 	ptrvec2=vec2;
 	ptrvec3=vec3;
-	printf("Vetor incial 1: {");
+	
+	printf("\nVetor inicial 1: {");
 	for (i = 0; i < num; i++)
 	{
-       	printf("  %hi",vec1[i]);
+		printf("  %hi",vec1[i]);
 	}
 	printf("}\n");
-		printf("Vetor incial 2: {");
+	printf("Vetor inicial 2: {");
 	for (i = 0; i < num; i++)
 	{
 		printf("  %hi",vec2[i]);
 	}
 	printf("}\n");
-	int alterados =vec_diff();	
+
+	int copiados =vec_diff();	
 	printf("Vetor final: {");
-	for (i = 0; i < num; i++)
+	for (i = 0; i < copiados; i++)
 	{
-		printf("  %hi",vec3[i]);
+		printf("  %d",vec3[i]);
 	}
-	printf("}\n Com %d numeros alterados",alterados);
-	
+	printf("}\nNumero de valores: %d\n",copiados);
 	
 	
 	return 0;
