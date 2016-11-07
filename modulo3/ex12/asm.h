@@ -1,1 +1,1 @@
-int vez_zero(void);
+int vec_zero(void);

@@ -21,72 +21,40 @@ sort_without_reps:
 	pushl %ecx
 	pushl %eax
 	pushl %edx
-	call ordenar
+	call ordenar         #ordena o vetor
 	popl %edx
 	popl %eax
 	popl %ecx
 
+	movl $0, %esi
+	movl (%ecx,%esi,4),%edi
+	movl %edi,(%edx)                  #coloca o primeiro valor do vetor ordenado no vetor final
+	movl $0, %edi
+	incl %esi
 
-
-ciclo:	
-	cmpl $0, %ebx
+ciclo:	                                              #esi funciona para correr o vetor ordenado incial, edi como contador de quantos foram adicionados ao final
+	cmpl %esi,%ebx
 	je end
-	decl %ebx
-	pushl %ecx
-	pushl %edx
-	call existe
-	popl %edx
-	popl %ecx
+		movl (%ecx,%esi,4),%eax
+		cmpl (%edx,%edi,4),%eax               #compara o valor em que vai o vetor final ao atual do vetor incial (como é um vetor ordenado pode se fazer)
+		je incr                   		#se for igual nao adiciona ao novo vetor, se for diferente adiciona
+		incl %edi
+		movl %eax,(%edx,%edi,4)
 
-	cmpl $0,%eax
-	jne ciclo
-	movl (%ecx),%esi
-	movl %esi, (%edx)
-	incl %ecx
-	incl %edx
+
+incr:
+	incl %esi
 	jmp ciclo
 
-	
-
-existe:
-	#prologue
-	pushl %ebp # save previous stack frame pointer
-	movl %esp, %ebp # the stack frame pointer for sum function
-
-	pushl %ebx
-	pushl %esi
-	pushl %edi
-	movl num, %ebx
-	movl ptrFinal, %edx
-	for:
-		cmpl $0,%ebx
-		je nao_existe
-		decl %ebx
-			movl (%edx),%esi
-			cmpl %esi,(%ecx)
-			je sim
-			incl %edx
-			jmp for
-
-	sim:
-		movl $1,%eax
-		jmp end
-			
-	nao_existe:
-		movl $0, %eax
-		
-	end:
-		popl %edi
-		popl %esi
-		popl %ebx
+end : 
+	incl %edi
+	movl %edi,%eax
 
 	# epilogue
 		movl %ebp , % esp # restore the stack pointer (" clear " the stack )
 		popl % ebp # restore the stack frame pointer
 		ret # return from the function
 
-	
-	
 
 ordenar:
 	#prologue

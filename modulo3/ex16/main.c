@@ -27,12 +27,12 @@ int main(void){
 	  printf("  %d ", vec[i]);
 	}
 	printf("}");
-	sort_without_reps();
+	int colocados=sort_without_reps();
 	printf("\nVetor final:   {");
-	for(i=0; i<num; i++){
-	  printf("  %d ", vec[i]);
+	for(i=0; i<colocados; i++){
+	  printf("  %d ", vecFinal[i]);
 	}
-	printf("}\n");
+	printf("}\nValores colocados no novo array : %d",colocados);
 
 	
 	

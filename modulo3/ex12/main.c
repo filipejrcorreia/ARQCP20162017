@@ -11,6 +11,7 @@ int main(){
 	
 	short int vec[num];
 	int i;
+	int alterados;
 	ptrvec = vec;
 	
 	for(i=0; i<num; i++){
@@ -18,19 +19,19 @@ int main(){
 		scanf("%hi", &vec[i]);
 	}
 	
-	printf("Vetor incial: {");
+	printf("\nVetor incial: {");
 	for (i = 0; i < num; i++)
 	{
 		printf("  %hi",vec[i]);
 	}
-	printf("}");
-	int alterados =vec_zero();	
+	printf("}\n");
+      	alterados =vec_zero();	
 	printf("Vetor final: {");
 	for (i = 0; i < num; i++)
 	{
 		printf("  %hi",vec[i]);
 	}
-	printf("}\n Com %d numeros alterados",alterados);
+	printf("}\n Com %d numeros alterados\n",alterados);
 	
 	
 	
