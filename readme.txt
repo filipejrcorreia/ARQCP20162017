@@ -22,3 +22,5 @@ Dentro do diretorio de cada modulo deve ser criado um subdiretorio para cada exe
 Submission closed for class Modulo01
 
 Submission closed for class modulo2
+
+Submission closed for class modulo3
