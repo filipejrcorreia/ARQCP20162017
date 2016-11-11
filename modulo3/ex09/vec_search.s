@@ -17,7 +17,7 @@ vec_search:
 	pushl %ebx
 
 	movl ptrvec, %edx #ptrvec, apontador para o vetor passa para o registo edx
-
+	
 	loop:
 	
 	movw (%edx),%cx #O valor apontado pelo atual endereço em edx passa para cx (como é um short, apenas necessita 2 bytes)
