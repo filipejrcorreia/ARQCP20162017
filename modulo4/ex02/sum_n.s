@@ -9,20 +9,20 @@ sum_n:
 	pushl %ebp
 	movl %esp, %ebp
 
-	movl 8(%ebp), %edx
+	movl 8(%ebp), %edx # Move o valor de n que está na stack para edx
 	movl $0, %ecx
 	movl $0, %eax	
 
 	loop:
 	
-	addl %ecx, %eax
+	addl %ecx, %eax #adiciona ecx a eax
 	
-	cmpl %edx, %ecx
-	je end
+	cmpl %edx, %ecx #compara ecx com edx
+	je end	#caso ecx seja igual a edx o loop acaba
 	
-	incl %ecx	
+	incl %ecx #incrementa 1 a ecx
 	
-	jmp loop
+	jmp loop #Jump necessário para que exista um loop
 	
 	end:
 	movl %ebp, %esp
