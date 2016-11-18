@@ -28,18 +28,18 @@ calculate:
 
 	mull %ebx #Multiplica eax com ebx e o valor fica em eax
 
-	movl %eax, %edi
+	movl %eax, %edi #Passa o valor de eax para edi
 	
-	pushl %edi
-	pushl 12(%ebp)
-	pushl 8(%ebp)
-	pushl $42
-	call print_result
-	addl $16, %esp
+	pushl %edi #Envia o valor de edi para a stack
+	pushl 12(%ebp) #Envia o valor de b para a stack
+	pushl 8(%ebp) #Envia o valor de a para a stack
+	pushl $42 #Envia o valor ascii de "*" para a stack
+	call print_result #Chamada à função print_result
+	addl $16, %esp #Esp volta ao indice em que se encontrava antes da chamada da função
 
-	subl %edi, %esi
+	subl %edi, %esi #Subtrai edi a esi
 
-	movl %esi, %eax
+	movl %esi, %eax #Move esi para eax para retornar
 
 	popl %edi
 	popl %ebx
