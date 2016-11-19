@@ -6,9 +6,9 @@ int activate_bit(int * ptr, int pos){
 
 	int verify = 0; /* Variável usada para o return e para verificar se o bit é alterado */
 	
-	if((x >> pos) %2 == 0 && pos >= 0 && pos <= 31){ /*Shift do numero pos posiçõas para a direita para verificar se o bit está ou não ativo */
+	if((x >> pos) %2 == 0 && pos >= 0 && pos <= 31){ /*Shift do numero pos posições para a direita para verificar se o bit está ou não ativo */
 
-		*ptr = *ptr + (1 << (pos - 1)); /*Ativa o bit selecionado */
+		*ptr = *ptr + (1 << (pos)); /*Ativa o bit selecionado */
 	
 		verify = 1;
 
