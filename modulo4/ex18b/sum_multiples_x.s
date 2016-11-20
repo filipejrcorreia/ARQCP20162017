@@ -9,23 +9,28 @@ sum_multiples_x:
 	pushl %ebp
 	movl %esp, %ebp
 	pushl %ebx
+	pushl %esi
 
 	movl 8(%ebp), %edx #Primeiro parametro da stack passa para edx
 	movl 12(%ebp), %ecx #Segundo parametro da stack passa para ecx
+
+	movb %ch, %cl #Passa o segundo byte menos significativo de x para o primeiro
+
+	movb $0, %ch #Deixa o segundo byte menos significativo de x a 0
+
+	movl $0, %esi
 	movl $0, %eax
-
-	movb %ch, %cl #Passa o seguno byte menos significativo de x para o primeiro
-
-	subb $1, %cl #Subtrai 1 a cl
 
 	loop:
 
-	movb (%edx), %bl #O valor atual apontado por edx passa para bl
+	movb (%edx), %al #O valor atual apontado por edx passa para al
 
-	and %cl, %bl #Aplica-se a mascara lógica and para confirmar se o numero é multiplo
+	divb %cl #Faz-se a divisão com ax para confirmar se é multiplo
 
-	cmpb $0, %bl #Compara o resultado da mascara lógica com 0
+	cmpb $0, %ah #Compara o resultado da divisão
 	je sum #Se o numero for multiplo, soma-se
+
+	movl $0, %eax 
 
 	midloop:
 
@@ -34,20 +39,20 @@ sum_multiples_x:
 	cmpb $0, (%edx) #Compara o valor apontado por edx a 0 para acabar o programa
 	jne loop
 
-	end:
+	end: 
+
+	movl %esi, %eax #Move esi para eax para retornar
+	
+	popl %esi
 	popl %ebx
 	movl %ebp, %esp
 	popl %ebp
 	ret
 
 	sum:
-        movl $0, %ebx 
 
-        movb (%edx), %bl #Move o char atual para bl
+	movb (%edx), %al #Move o valor apontado por edx para al
 
-        addl %ebx, %eax #soma ebx a eax, o registo de return
+	addl %eax, %esi #Soma eax a esi
 
-        jmp midloop
-
-
-
+	jmp midloop
