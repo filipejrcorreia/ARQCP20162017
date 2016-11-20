@@ -1,6 +1,3 @@
-.section .data
-	.global ptr1 # ptr1 global 
-
 .section .text
 	.global count_odd # int count_odd(int*ptr,int num)
 

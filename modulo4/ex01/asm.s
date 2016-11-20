@@ -1,5 +1,3 @@
-.section .data
-	.global ptr1 # ptr1 global 
 
 .section .text
 	.global square # int square(int x)

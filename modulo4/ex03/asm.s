@@ -1,6 +1,3 @@
-.section .data
-	.global ptr1 # ptr1 global 
-
 .section .text
 	.global greater # int square(int num1,int num2, int num3)
 
