@@ -1,12 +1,13 @@
 #include <stdio.h>
-#include "asm.h"
+#include "activate_bits.h"
+#include "activate_invert_bits.h"
 
 
 int main(void) {
-  unsigned int num=102,left=16,right=5;
+	int num=102,left=15,right=4;
 	
 	printf("O numero inicial : %x\n",num);
-	printf("O numero final com os bits a esquerda da posicao %d ativados e a direita da posicao %d ativados é %x\n", left,right,activate_bits(num,left,right));
+	printf("O resultado ativado e posteriormente invertido é %x\n",activate_invert_bits(num,left,right));
 	
  
   return 0;

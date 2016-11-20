@@ -14,10 +14,10 @@ calc:
 	subl $4 ,% esp # reserves space for a local variable
 
 
-	movl (%ebx),%esi
-	subl %edx,%esi
-	movl %esi,-4(%ebp)
-	mull -4(%ebp)
+	movl (%ebx),%esi		#coloca o valor apontado em esi
+	subl %edx,%esi			#subtrai b-a
+	movl %esi,-4(%ebp)		#coloca o resultado numa variavel local
+	mull -4(%ebp)			#multiplic c(eax) pelo resultado obtiado anteriormente
 		
 	
 fim:	

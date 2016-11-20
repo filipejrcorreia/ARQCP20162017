@@ -1,11 +1,14 @@
-main: main.o asm.o
-	gcc -Wall -g main.o asm.o -o main
+main: main.o activate_bits.o activate_invert_bits.o
+	gcc -Wall -g main.o activate_bits.o activate_invert_bits.o -o main
 
-main.o: main.c asm.h
+main.o: main.c activate_bits.h activate_invert_bits.h
 	gcc -Wall -g -c main.c
 
-asm.o: asm.s
-	gcc -Wall -g -c asm.s
+activate_bits.o: activate_bits.s
+	gcc -Wall -g -c activate_bits.s
+
+activate_invert_bits.o: activate_invert_bits.s
+	gcc -Wall -g -c activate_invert_bits.s
 
 run: main
 	./main

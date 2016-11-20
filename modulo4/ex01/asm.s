@@ -6,7 +6,7 @@
 square:
 	#prologue
 	pushl %ebp # save previous stack frame pointer
-	movl %esp, %ebp # the stack frame pointer for sum function
+	movl %esp, %ebp # the stack frame pointer for  function
 
 	
 	movl 8(%ebp),%eax

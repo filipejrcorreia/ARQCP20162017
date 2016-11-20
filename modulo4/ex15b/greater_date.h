@@ -1,1 +1,1 @@
-int menor_data(int data1, int data2);
+int greater_date(int data1, int data2);

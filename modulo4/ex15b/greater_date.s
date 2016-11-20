@@ -31,9 +31,9 @@ mes:
 	cmpl %edi , %ecx 			# compara mes1 com mes2
 	jg data2_maior
 	jl data1_maior
-	je verificar_dia
+	je dia
 	
-verificar_dia:
+dia:
 	movl %edx , %edi			# poem em edi edx
 	movl %esi , %ecx 			# poem em ecx , esi
 	andl $0x00ff0000 , %edi			# dia data1	

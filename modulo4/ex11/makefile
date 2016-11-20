@@ -1,30 +1,17 @@
-# variaveis
+main: main.o rotateLeft.o rotateRight.o
+	gcc -Wall -g main.o rotateRight.o rotateLeft.o -o main
 
-INCLUDES = rotates.h
-SOURCES = rotates.c main.c
-OBJFILES = rotates.o main.o
-EXEC = ex11
+main.o: main.c rotateLeft.h
+	gcc -Wall -g -c main.c
 
-# regras de sufixo
+rotateLeft.o: rotateLeft.c
+	gcc -Wall -g -c rotateLeft.c
 
-.SUFFIXES : .c .o
+rotateRight.o: rotateRight.c
+	gcc -Wall -g -c rotateRight.c
 
-# como transformar um .c num .o ; $< -- nome do ficheiro
+run: main
+	./main
 
-.c.o:
-
-	gcc -Wall -g -c $<
-
-${OBJFILES}: ${SOURCES} ${INCLUDES}
-
-${EXEC}: ${OBJFILES}
-
-	gcc -Wall -g -o ${EXEC} ${OBJFILES}
-
-run: ${EXEC}
-
-	./${EXEC}
-
-clean:
-
-	rm -f ${OBJFILES} ${EXEC}
+clean: 
+	rm *.o main
