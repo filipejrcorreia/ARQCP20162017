@@ -1,1 +1,1 @@
-int greater(int num1,int num2,int num3);
+int activate_bits(int num, int left, int right );
