@@ -1,4 +1,4 @@
-.section .data
+.section .text
 
 	.global find_greater
 

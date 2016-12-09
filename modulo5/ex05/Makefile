@@ -4,7 +4,7 @@ main: main.o find_greater.o
 main.o: main.c find_greater.h
 	gcc -Wall -g -c main.c
 
-change_addres.o: find_greater.s
+find_greater.o: find_greater.s
 	gcc -Wall -g -c find_greater.s
 
 run: main
