@@ -21,14 +21,14 @@ ciclo:
 	cmpl %edx, %esi			#se o contador for menor que o limite a direita (se tivermos a direita do rigth)
 	je continuar
 	orl %edi, %eax			#aplica a mascara invertendo o bit
-	imull $10,%edi			#multiplica a mascara por 10 para o "1" avançar uma posicao na mascara
+	imull $2,%edi			#multiplica a mascara por 10 para o "1" avançar uma posicao na mascara
 	incl %esi			#incrementa o contador
 	jmp ciclo
 
 continuar:
 	cmpl %ebx,%esi			#enquanto tivermos entre o limite esquero e direito so incrementamos esi e multiplicamos a mascara
 	jg ciclo2			#quando o contador for maior que o limite a esquerda salta para o segundo ciclo
-	imull $10,%edi
+	imull $2,%edi
 	incl %esi	
 	jmp continuar
 
@@ -36,7 +36,7 @@ ciclo2:
 	cmpl $31,%esi			#limite para correr os bits todos
 	je fim	
 	orl %edi, %eax			#aplica a mascara
-	imull $10,%edi			#avança o "1" na mascara
+	imull $2,%edi			#avança o "1" na mascara
 	incl %esi			#incrementa o contador
 	jmp ciclo2
 	

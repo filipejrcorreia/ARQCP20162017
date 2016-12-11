@@ -1,0 +1,1 @@
+void inserir_notas(Aluno *p , int * morada);
