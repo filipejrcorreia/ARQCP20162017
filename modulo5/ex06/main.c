@@ -4,8 +4,8 @@
 
 int main(void){
 
-	s1 s;
-	s1 *ptr = &s;
+	s1 student;
+	s1 *ptr = &student;
 	int vi = 1;
 	char vc = 'D';
 	int vj = 12;

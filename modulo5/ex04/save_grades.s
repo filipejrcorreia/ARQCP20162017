@@ -13,8 +13,8 @@ save_grades:
 	movl %esp , %ebp
 
 
-	movl 8(%ebp) , %ecx 	# mover a estrutura para o registo %esi
-	movl 12(%ebp) , %edi 	# mover o vetor notas para o registo %edi
+	movl 8(%ebp) , %ecx 	# estrutura para ecx
+	movl 12(%ebp) , %edi 	# vetor notas para %edi
 
 
 	addl $8 , %ecx		# mover para o inicio do vetor
@@ -24,6 +24,7 @@ save_grades:
 	ciclo:
 	
 		cmpl $0 , %ebx		# verificar se já chegou ao fim do vetor notas
+
 		je fim
 	
 		movl (%edi) , %eax 		# mover o valor da posição de %edi para o registo %eax

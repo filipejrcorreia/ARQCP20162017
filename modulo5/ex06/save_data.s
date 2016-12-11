@@ -12,7 +12,7 @@ save_data:
 	movl %esp, %ebp
 
 
-	movl 8(%ebp) , %edi		# mover o pointer para o registo %edi
+	movl 8(%ebp) , %edi		# estrututa para %edi
 
 	movl 12(%ebp) , %esi	# vi para o registo %esi
 	movl 16(%ebp) , %ecx	# vc para o registo %ecx 
