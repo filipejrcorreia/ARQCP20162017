@@ -26,3 +26,5 @@ Submission closed for class modulo2
 Submission closed for class modulo3
 
 Submission closed for class modulo4
+
+Submission closed for class modulo5
